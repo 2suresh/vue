@@ -3,12 +3,28 @@
     <script src="js/vue.min.js"></script>
     <div id="app">
       {{message}}
+      <ul>
+          <li v-for="food in food_items">
+            {{food}}
+          </li>
+      </ul>
+      <button v-on:click="buttonClick">Click me!</button>
+      <button v-on:click="demoClick">Console me!</button>
     </div>
     <script>
     new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue'
+        'message': 'Hello Vue',
+        'food_items': ['curd', 'water', 'fruits']
+      },
+      methods: {
+        buttonClick: function() {
+          alert('Hey!....its me');
+        },
+        demoClick: function() {
+          console.log("Im doing great!..................");
+        }
       }
     });
     </script>
