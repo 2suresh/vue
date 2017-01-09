@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Form validation Vue.js</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" v-model="name">
+        </div>
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" v-model="email">
+        </div>
+        <div>
+            <button type="submit" v-bind:disabled="!isValid">Submit</button></div>
+    </form>
+
+    <script>
+        new Vue({
+            el: 'body',
+            data: {
+                name: '',
+                email: ''
+            },
+            computed: {
+                isValid: function() {
+                    return this.name != '' && this.email != ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,32 +1,42 @@
 <html>
-  <head>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Same code Vue.js</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+
+<body>
     <script src="js/vue.min.js"></script>
     <div id="app">
-      {{message}}
-      <ul>
-          <li v-for="food in food_items">
-            {{food}}
-          </li>
-      </ul>
-      <button v-on:click="buttonClick">Click me!</button>
-      <button v-on:click="demoClick">Console me!</button>
+        {{message}}
+        <ul>
+            <li v-for="food in food_items">
+                {{food}}
+            </li>
+        </ul>
+        <button v-on:click="buttonClick">Click me!</button>
+        <button v-on:click="demoClick">Console me!</button>
+        <p v-if="seen">Now you see me</p>
     </div>
     <script>
-    new Vue({
-      el: '#app',
-      data: {
-        'message': 'Hello Vue',
-        'food_items': ['curd', 'water', 'fruits']
-      },
-      methods: {
-        buttonClick: function() {
-          alert('Hey!....its me');
-        },
-        demoClick: function() {
-          console.log("Im doing great!..................");
-        }
-      }
-    });
+        new Vue({
+            el: '#app',
+            data: {
+                'message': 'Hello Vue' + Date(),
+                'food_items': ['curd', 'water', 'fruits'],
+                'seen': 0
+            },
+            methods: {
+                buttonClick: function() {
+                    alert('Hey!....its me');
+                },
+                demoClick: function() {
+                    console.log("Im doing great!..................");
+                }
+            }
+        });
     </script>
-  </head>
+</body>
+
 </html>
